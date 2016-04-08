@@ -11,7 +11,7 @@ import android.util.Log;
 
 
 public class DBHelper {
-	//¶¨Òå±íÃû
+	//å®šä¹‰è¡¨å
 	
 	private static final String DATABASE_NAME="somebodydata";                  
 	private static final int DATABASE_VERSION=1;
@@ -22,7 +22,7 @@ public class DBHelper {
 	private static final String TABLE_NAME_PERFORMER="performer";                 //COLUMNS3
 	
 	private static final String[] COLUMNS={"_somebodyid","name","sex","birthday","nativePlace","nickName","telephone","email","qq","weibo","boke","wechat","address","needsAdd","height","weight","bloodType","nationnality","party","married","healthCondition","occupation","workUnits","workTitle","income","characterType","hobbyAdd","strongPointAdd","weakPointAdd","personalWealth","socialClass","educationalStatus","cohesion","relationship"};
-	private static final String[] COLUMNS1= {"_id","relatedPersonType","relatedPersonName","_somebodyid","_relatedSomebodyid"};//_idÎªÖ÷¼ü
+	private static final String[] COLUMNS1= {"_id","relatedPersonType","relatedPersonName","_somebodyid","_relatedSomebodyid"};//_idä¸ºä¸»é”®
 	private static final String[] COLUMNS2= {"_taskid","taskName","taskGoal","beginTime","endTime","taskStatus"};
 	private static final String[] COLUMNS3= {"_stepid","whichStep","stepContent","stepEndtime","isCompleted","_taskid"};
 	private static final String[] COLUMNS4= {"_id","_taskid","_stepid","performerid","performertask"};
@@ -30,8 +30,8 @@ public class DBHelper {
 	private static SQLiteDatabase db;
 	
 	////////////////////////////////////////////////////////////////////////////////
-	//////ÈÎÎñ´¦ÀíÊı¾İ//////////////////////////////////////////////////////////////
-	private TaskStep[] tss;//ÈÎÎñ²½Öè
+	//////ä»»åŠ¡å¤„ç†æ•°æ®//////////////////////////////////////////////////////////////
+	private TaskStep[] tss;//ä»»åŠ¡æ­¥éª¤
 	private class Performer{
 		int[] performerId;
 		String[] performerTask;
@@ -41,7 +41,7 @@ public class DBHelper {
 
 	//
 	private static class DBOpenHelper extends SQLiteOpenHelper{
-		               //´´½¨±í¸ñ
+		               //åˆ›å»ºè¡¨æ ¼
 		//private static final String CREATE_TABLE="create table "+TABLE_NAME+" ("+COLUMNS[0]+" integer primary key autoincrement,"+COLUMNS[1]+" text,"+COLUMNS[2]+" text,"+COLUMNS[3]+" text,"+COLUMNS[4]+" text,"+COLUMNS[5]+" text,"+COLUMNS[6]+" text,"+COLUMNS[7]+" text,"+COLUMNS[8]+" text,"+COLUMNS[9]+" text,"+COLUMNS[10]+" text,"+COLUMNS[11]+" text,"+COLUMNS[12]+" text,"+COLUMNS[13]+" text,"+COLUMNS[14]+" float,"+COLUMNS[15]+" float,"+COLUMNS[16]+" text,"+COLUMNS[17]+" text,"+COLUMNS[18]+" text,"+COLUMNS[19]+" boolean,"+COLUMNS[20]+" boolean,"+COLUMNS[21]+" text,"+COLUMNS[22]+" text,"+COLUMNS[23]+" text not null,"+COLUMNS[24]+" text not null,"+COLUMNS[25]+" integer not null,"+COLUMNS[26]+" text not null,"+COLUMNS[27]+" text not null,"+COLUMNS[28]+" text not null,"+COLUMNS[29]+" integer not null,"+COLUMNS[30]+" integer not null,"+COLUMNS[31]+" integer not null,"+COLUMNS[32]+" integer not null,"+COLUMNS[33]+" text not null);";
 		private static final String CREATE_TABLE="create table "+TABLE_NAME+" ("+COLUMNS[0]+" integer primary key autoincrement,"+COLUMNS[1]+" text not null,"+COLUMNS[2]+" text not null,"+COLUMNS[3]+" text not null,"+COLUMNS[4]+" text not null,"+COLUMNS[5]+" text not null,"+COLUMNS[6]+" text not null,"+COLUMNS[7]+" text not null,"+COLUMNS[8]+" text not null,"+COLUMNS[9]+" text not null,"+COLUMNS[10]+" text not null,"+COLUMNS[11]+" text not null,"+COLUMNS[12]+" text not null,"+COLUMNS[13]+" text not null,"+COLUMNS[14]+" float not null,"+COLUMNS[15]+" float not null,"+COLUMNS[16]+" text not null,"+COLUMNS[17]+" text not null,"+COLUMNS[18]+" text not null,"+COLUMNS[19]+" boolean not null,"+COLUMNS[20]+" boolean not null,"+COLUMNS[21]+" text not null,"+COLUMNS[22]+" text not null,"+COLUMNS[23]+" text not null,"+COLUMNS[24]+" text not null,"+COLUMNS[25]+" integer not null,"+COLUMNS[26]+" text not null,"+COLUMNS[27]+" text not null,"+COLUMNS[28]+" text not null,"+COLUMNS[29]+" integer not null,"+COLUMNS[30]+" integer not null,"+COLUMNS[31]+" integer not null,"+COLUMNS[32]+" integer not null,"+COLUMNS[33]+" text not null);";
 		
@@ -57,7 +57,7 @@ public class DBHelper {
 		}
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-			            // É¾³ı¾É±í¸ñ£¬´´½¨ĞÂ±í¸ñ
+			            // åˆ é™¤æ—§è¡¨æ ¼ï¼Œåˆ›å»ºæ–°è¡¨æ ¼
 			db.execSQL("drop table if exists "+TABLE_NAME);
 			//db.execSQL("drop table if exists "+TABLE_NAME_RELATEDPERSON);
 			onCreate(db);
@@ -65,12 +65,12 @@ public class DBHelper {
 		}
 		     
 	}                   
-	//´´½¨SQLiteOpenHelper¶ÔÏó
+	//åˆ›å»ºSQLiteOpenHelperå¯¹è±¡
 	public DBHelper(Context context){    
 		helper=new DBOpenHelper(context);
 		db=helper.getWritableDatabase();
 	}
-	//²åÈëÊı¾İ,±äÁ¿ÅúÁ¿²åÈë
+	//æ’å…¥æ•°æ®,å˜é‡æ‰¹é‡æ’å…¥
 	public int insert(Somebody somebody1){
 		ContentValues values=new ContentValues();
 		values.put(COLUMNS[1], somebody1.getName());
@@ -107,16 +107,16 @@ public class DBHelper {
 		values.put(COLUMNS[32], somebody1.getCohesion());
 		values.put(COLUMNS[33], somebody1.getRelationship());
 		
-		String[][] relatedPerson=somebody1.getRelatedPerson();   //²úÉúÒ»¸ö¶şÎ¬Êı×é
+		String[][] relatedPerson=somebody1.getRelatedPerson();   //äº§ç”Ÿä¸€ä¸ªäºŒç»´æ•°ç»„
 		int somebody1_id;
 		Cursor cursor=db.query(TABLE_NAME,new String[] {"_somebodyid"},null,null,null,null,null);
 		if(cursor.getCount()>0) {
 			cursor.moveToLast();
-			somebody1_id=Integer.valueOf(cursor.getString(0))+1;  //¼Ó1²ÅµÃµ±Ç°µÄIDºÅ
+			somebody1_id=Integer.valueOf(cursor.getString(0))+1;  //åŠ 1æ‰å¾—å½“å‰çš„IDå·
 		}
 		else
 		{
-			somebody1_id=1;                                     //ĞÂ±íÉèÖÃÎª1
+			somebody1_id=1;                                    
 		}
 		//String somebody_id=String.valueOf(values.get("_somebodyid"));
 		//Log.i("name value",String.valueOf(somebody1_id));
@@ -124,8 +124,8 @@ public class DBHelper {
 			
 		db.insert(TABLE_NAME,null, values);
 		
-		//Ìí¼Ó¹ØÏµ×ÊÔ´
-		if(!String.valueOf(relatedPerson[0][0]).equals("Î´Öª")) {
+		//æ·»åŠ å…³ç³»èµ„æº
+		if(!String.valueOf(relatedPerson[0][0]).equals("æœªçŸ¥")) {
 		addRelatedPerson(somebody1_id,relatedPerson);
 		}
 		
@@ -137,7 +137,7 @@ public class DBHelper {
 		
 	}
 	    
-	    //²åÈëÒ»¸öÈË¼¸¸öÌØ¶¨µÄĞÅÏ¢£¬Ö÷ÒªÓÃÓÚµç»°²¾ÅúÁ¿Êı¾İµ¼ÈëºÍ¸üĞÂ
+	    //æ’å…¥ä¸€ä¸ªäººå‡ ä¸ªç‰¹å®šçš„ä¿¡æ¯ï¼Œä¸»è¦ç”¨äºç”µè¯ç°¿æ‰¹é‡æ•°æ®å¯¼å…¥å’Œæ›´æ–°
 	    public int insertContact(Somebody somebody1){
 		ContentValues values=new ContentValues();
 		values.put(COLUMNS[1], somebody1.getName());
@@ -147,11 +147,11 @@ public class DBHelper {
 		Cursor cursor=db.query(TABLE_NAME,new String[] {"_somebodyid"},null,null,null,null,null);
 		if(cursor.getCount()>0) {
 			cursor.moveToLast();
-			somebody1_id=Integer.valueOf(cursor.getString(0))+1;  //¼Ó1²ÅµÃµ±Ç°µÄIDºÅ
+			somebody1_id=Integer.valueOf(cursor.getString(0))+1;  //åŠ 1æ‰å¾—å½“å‰çš„IDå·
 		}
 		else
 		{
-			somebody1_id=1;                                     //ĞÂ±íÉèÖÃÎª1
+			somebody1_id=1;                                     //æ–°è¡¨è®¾ç½®ä¸º1
 		}
 		db.insert(TABLE_NAME,null, values);
 		return somebody1_id;
@@ -159,7 +159,7 @@ public class DBHelper {
 	
 	
 	private void addRelatedPerson(int somebody1_id,String[][] relatedPerson) {
-		// ÓÃÓÚÌí¼Ó¹ØÏµ×ÊÔ´µÄ·½·¨
+		// ç”¨äºæ·»åŠ å…³ç³»èµ„æºçš„æ–¹æ³•
 		//Log.i("TABLE",CREATE_TABLE_ADDRELATEDPERSON);
 		final String CREATE_TABLE1="create table if not exists "+TABLE_NAME_RELATEDPERSON+" ("+COLUMNS1[0]+" integer primary key autoincrement,"+COLUMNS1[1]+" text not null,"+COLUMNS1[2]+" text not null,"+COLUMNS1[3]+" integer not null,"+COLUMNS1[4]+" integer not null);";
 		db.execSQL(CREATE_TABLE1);
@@ -173,7 +173,7 @@ public class DBHelper {
 		values1.put(COLUMNS1[1], relatedPerson[i][0]);
 		values1.put(COLUMNS1[2], relatedPerson[i][1]);
 		values1.put(COLUMNS1[3], somebody1_id);     
-		values1.put(COLUMNS1[4], Integer.valueOf(relatedPerson[i][3]));   //Êµ¼Ê½«0Öµ¸ørelatedSomebodyµÄidÖµ£¬´ıÒÔºó²éÕÒÍ³Ò»·ÖÅäidÖµ
+		values1.put(COLUMNS1[4], Integer.valueOf(relatedPerson[i][3]));   //å®é™…å°†0å€¼ç»™relatedSomebodyçš„idå€¼ï¼Œå¾…ä»¥åæŸ¥æ‰¾ç»Ÿä¸€åˆ†é…idå€¼
 		
 		
 		//Log.i("lenth",String.valueOf(values1.get(COLUMNS1[1]))+"|"+String.valueOf(values1.get(COLUMNS1[2]))+"|"+values1.get(COLUMNS1[3]));
@@ -183,7 +183,7 @@ public class DBHelper {
 		}
 	}
 	private String DataAdd(String[] elements) {
-		//½«×Ö·û´®Êı×éÖĞËùÓĞÖµ×éºÏ³ÉÒ»¸ö×Ö·û´®ÒÔ¡°¡¢¡±ºÅ¸ô¿ª
+		//å°†å­—ç¬¦ä¸²æ•°ç»„ä¸­æ‰€æœ‰å€¼ç»„åˆæˆä¸€ä¸ªå­—ç¬¦ä¸²ä»¥â€œã€â€å·éš”å¼€
 		String result = "";
 		if(elements[0].toString().trim().equals("")) {
 			//Log.i("elements[0]",elements[0]);
@@ -191,7 +191,7 @@ public class DBHelper {
 		}
 		else {		
 		for(int i=0;i<elements.length;i++) {
-			result+=String.valueOf(elements[i])+"¡¢";
+			result+=String.valueOf(elements[i])+"ã€";
 		}
 		}
 		//for(int i=0;i<elements.length;i++)
@@ -202,13 +202,13 @@ public class DBHelper {
 	
 	
 	
-	//²éÑ¯Êı¾İ
+	//æŸ¥è¯¢æ•°æ®
 	public Somebody query(String person_name,int person_id){
 		Somebody person=new Somebody();
 	
 		Cursor cursor=db.query(TABLE_NAME,null, "name='"+person_name+"' and _somebodyid='"+person_id+"'", null,null, null, null);
 		//Cursor cursor=db.query(TABLE_NAME, columns, selection, selectionArgs, groupBy, having, orderBy);
-		if(cursor.getCount()>0){ //Èç²éÑ¯¼ÇÂ¼Êı>0
+		if(cursor.getCount()>0){ //å¦‚æŸ¥è¯¢è®°å½•æ•°>0
 			cursor.moveToFirst();
 			person.setId(cursor.getInt(0));
 			person.setName(cursor.getString(1));
@@ -225,7 +225,7 @@ public class DBHelper {
 			person.setBoke(cursor.getString(10));
 			person.setWechat(cursor.getString(11));
 			person.setAddress(cursor.getString(12));
-			String[] need=cursor.getString(13).split("¡¢");
+			String[] need=cursor.getString(13).split("ã€");
 			person.setNeeds(need);
 			person.setHeight(cursor.getFloat(14));
 			person.setWeight(cursor.getFloat(15));
@@ -240,18 +240,18 @@ public class DBHelper {
 			person.setWorkTitle(cursor.getString(23));
 			person.setIncome(cursor.getString(24));
 			person.setCharacterType(cursor.getInt(25));
-			String[] hobby=cursor.getString(26).split("¡¢");
+			String[] hobby=cursor.getString(26).split("ã€");
 			person.setHobby(hobby);
-			String[] strongPoint=cursor.getString(27).split("¡¢");
+			String[] strongPoint=cursor.getString(27).split("ã€");
 			person.setStrongPoint(strongPoint);
-			String[] weakPoint=cursor.getString(28).split("¡¢");
+			String[] weakPoint=cursor.getString(28).split("ã€");
 			person.setWeakPoint(weakPoint);
 			person.setPersonalWealth(cursor.getInt(29));
 			person.setSocialClass(cursor.getInt(30));
 			person.setEducationalStatus(cursor.getInt(31));
 			person.setCohesion(cursor.getInt(32));			
 			person.setRelationship(cursor.getString(33));
-			person.setRelatedPerson(queryRelatedPerson(person_id));//¸ù¾İperson_id²éÑ¯ÆäËüĞÅÏ¢
+			person.setRelatedPerson(queryRelatedPerson(person_id));//æ ¹æ®person_idæŸ¥è¯¢å…¶å®ƒä¿¡æ¯
 			
 			return person;
 		}
@@ -262,17 +262,17 @@ public class DBHelper {
 		
 	}
 	private String[][] queryRelatedPerson(int person_id) {
-		// ½«¶şÎ¬×Ö·û´®Êı×éµÄÖµ·µ»Ø
+		// å°†äºŒç»´å­—ç¬¦ä¸²æ•°ç»„çš„å€¼è¿”å›
 		String [][] relatedPerson = new String [10][5];
 		Cursor cursor1=db.query(TABLE_NAME_RELATEDPERSON,null, "_somebodyid='"+person_id+"'", null,null, null, null);
 		cursor1.moveToFirst();
 		if(cursor1.getCount()>0){
 			for(int i=0;i<cursor1.getCount();i++){
-				relatedPerson[i][0]=cursor1.getString(0);  //±í_id£¬Ö÷¼ü
-				relatedPerson[i][1]=cursor1.getString(1);  //relatedPersonType£¬¹ØÏµÀàĞÍ
-				relatedPerson[i][2]=cursor1.getString(2);  //relatedPersonName,¹ØÁªÈËÃû
-				relatedPerson[i][3]=cursor1.getString(3);  //somebodyid£¬ÖĞĞÄÈËÎïid
-				relatedPerson[i][4]=cursor1.getString(4);  //relatedPersonId£¬¹ØÁªÈËid
+				relatedPerson[i][0]=cursor1.getString(0);  //è¡¨_idï¼Œä¸»é”®
+				relatedPerson[i][1]=cursor1.getString(1);  //relatedPersonTypeï¼Œå…³ç³»ç±»å‹
+				relatedPerson[i][2]=cursor1.getString(2);  //relatedPersonName,å…³è”äººå
+				relatedPerson[i][3]=cursor1.getString(3);  //somebodyidï¼Œä¸­å¿ƒäººç‰©id
+				relatedPerson[i][4]=cursor1.getString(4);  //relatedPersonIdï¼Œå…³è”äººid
 				cursor1.moveToNext();
 			}
 		}
@@ -281,11 +281,11 @@ public class DBHelper {
 	
 	
 	public String[][] listPersons(int updownDepend, boolean updownFlag) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-		String[][] personsInfo = new String[1000][5];   //³õÊ¼»¯ÈËÔ±ĞÅÏ¢µÄ´óĞ¡
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+		String[][] personsInfo = new String[1000][5];   //åˆå§‹åŒ–äººå‘˜ä¿¡æ¯çš„å¤§å°
 		switch(updownDepend) {
 		case 1:{
-			//socialClass   ¹ÙÎ»
+			//socialClass   å®˜ä½
 			
 		if(updownFlag==true) {
 		    Cursor cursor=db.query(TABLE_NAME, new String[] {"_somebodyid","name","sex","socialClass"}, null, null, null, null, "socialClass desc");
@@ -321,7 +321,7 @@ public class DBHelper {
 		break;	
 		}
 		
-		case 2:{     //personalWealth ²Æ¸»
+		case 2:{     //personalWealth è´¢å¯Œ
 			if(updownFlag==true){
 				Cursor cursor=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","personalWealth"},null, null, null,null,"personalWealth desc");
 			    if(cursor.getCount()>0) {
@@ -366,7 +366,7 @@ public class DBHelper {
 		}
 		case 3:{
 			if(updownFlag==true){
-			//educationalStatus   ÖªÊ¶
+			//educationalStatus   çŸ¥è¯†
 			Cursor cursor=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","educationalStatus"},null, null, null,null,"educationalStatus");
 		    if(cursor.getCount()>0) {
 		    	//Log.i("count", String.valueOf(cursor.getCount()));
@@ -409,7 +409,7 @@ public class DBHelper {
 		break;	
 		}
 		case 4:{
-			//cohesion  Ç×ÃÜ¶È
+			//cohesion  äº²å¯†åº¦
 			if(updownFlag==true){
 			Cursor cursor=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","cohesion","relationship"},null, null, null,null,"cohesion");
 		    if(cursor.getCount()>0) {
@@ -454,7 +454,7 @@ public class DBHelper {
 			}
 		break;	
 		}
-		case 0:{//ÎŞÌØÊâÒªÇó£¬Ôò°´ÕÕidË³ĞòÄæĞòÅÅÁĞºóÍÆËÍµ½¶şÎ¬Êı×é,Ö÷ÒªÏÔÊ¾ÁªÏµ·½Ê½
+		case 0:{//æ— ç‰¹æ®Šè¦æ±‚ï¼Œåˆ™æŒ‰ç…§idé¡ºåºé€†åºæ’åˆ—åæ¨é€åˆ°äºŒç»´æ•°ç»„,ä¸»è¦æ˜¾ç¤ºè”ç³»æ–¹å¼
 			if(updownFlag==true){
 			Cursor cursor=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","telephone"},null, null, null,null,"_somebodyid desc");
 		    if(cursor.getCount()>0) {
@@ -503,48 +503,48 @@ public class DBHelper {
 		return personsInfo;
 	}
 	
-	public Somebody dataWasher(Somebody somebody1)   //¶ÔsomebodyÊı¾İ½øĞĞ¹ıÂË£¬Ê¹Ö®·ûºÏ²åÈëÊı¾İ¿âÌõ¼ş
+	public Somebody dataWasher(Somebody somebody1)   //å¯¹somebodyæ•°æ®è¿›è¡Œè¿‡æ»¤ï¼Œä½¿ä¹‹ç¬¦åˆæ’å…¥æ•°æ®åº“æ¡ä»¶
 	{
 		
 		if(String.valueOf(somebody1.getName()).equals("null")) {somebody1.setName("noname");}
 		//Log.i("testValue:",String.valueOf(somebody1.getSex()));
-		if(String.valueOf(somebody1.getSex()).equals("null")) {somebody1.setSex("ÄĞ");}
-		if(String.valueOf(somebody1.getBirthday()).equals("null")) {somebody1.setBirthday("Î´Öª");}
-		if(String.valueOf(somebody1.getNativePlace()).equals("null")) {somebody1.setNativePlace("Î´Öª");}
-		if(String.valueOf(somebody1.getNickName()).equals("null")) {somebody1.setNickName("Î´Öª");}
-		if(String.valueOf(somebody1.getTelephone()).equals("null")) {somebody1.setTelephone("Î´Öª");}
-		if(String.valueOf(somebody1.getEmail()).equals("null")) {somebody1.setEmail("Î´Öª");}
-		if(String.valueOf(somebody1.getQq()).equals("null")) {somebody1.setQq("Î´Öª");}
-		if(String.valueOf(somebody1.getWeibo()).equals("null")) {somebody1.setWeibo("Î´Öª");}
-		if(String.valueOf(somebody1.getBoke()).equals("null")) {somebody1.setBoke("Î´Öª");}
-		if(String.valueOf(somebody1.getWechat()).equals("null")) {somebody1.setWechat("Î´Öª");}
-		if(String.valueOf(somebody1.getAddress()).equals("null")) {somebody1.setAddress("Î´Öª");}
-		if(String.valueOf(somebody1.getNeeds()).equals("null")) {String[] need= {"Î´Öª"};somebody1.setNeeds(need);}
+		if(String.valueOf(somebody1.getSex()).equals("null")) {somebody1.setSex("ç”·");}
+		if(String.valueOf(somebody1.getBirthday()).equals("null")) {somebody1.setBirthday("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getNativePlace()).equals("null")) {somebody1.setNativePlace("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getNickName()).equals("null")) {somebody1.setNickName("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getTelephone()).equals("null")) {somebody1.setTelephone("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getEmail()).equals("null")) {somebody1.setEmail("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getQq()).equals("null")) {somebody1.setQq("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getWeibo()).equals("null")) {somebody1.setWeibo("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getBoke()).equals("null")) {somebody1.setBoke("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getWechat()).equals("null")) {somebody1.setWechat("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getAddress()).equals("null")) {somebody1.setAddress("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getNeeds()).equals("null")) {String[] need= {"æœªçŸ¥"};somebody1.setNeeds(need);}
 		if(String.valueOf(somebody1.getHeight()).equals("null")) {somebody1.setHeight(0);}
 		if(String.valueOf(somebody1.getWeight()).equals("null")) {somebody1.setWeight(0);}
-		if(String.valueOf(somebody1.getBloodType()).equals("null")) {somebody1.setBloodType("Î´Öª");}
-		if(String.valueOf(somebody1.getNationality()).equals("null")) {somebody1.setNationality("Î´Öª");}
-		if(String.valueOf(somebody1.getParty()).equals("null")) {somebody1.setParty("Î´Öª");}
+		if(String.valueOf(somebody1.getBloodType()).equals("null")) {somebody1.setBloodType("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getNationality()).equals("null")) {somebody1.setNationality("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getParty()).equals("null")) {somebody1.setParty("æœªçŸ¥");}
 		if(String.valueOf(somebody1.isMarried()).equals("null")) {somebody1.setMarried(false);}
 		if(String.valueOf(somebody1.isHealthCondition()).equals("null")) {somebody1.setHealthCondition(true);}
-		if(String.valueOf(somebody1.getOccupation()).equals("null")) {somebody1.setOccupation("Î´Öª");}
-		if(String.valueOf(somebody1.getWorkUnits()).equals("null")) {somebody1.setWorkUnits("Î´Öª");}
-		if(String.valueOf(somebody1.getWorkTitle()).equals("null")) {somebody1.setWorkTitle("Î´Öª");}
-		if(String.valueOf(somebody1.getIncome()).equals("null")) {somebody1.setIncome("Î´Öª");}
+		if(String.valueOf(somebody1.getOccupation()).equals("null")) {somebody1.setOccupation("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getWorkUnits()).equals("null")) {somebody1.setWorkUnits("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getWorkTitle()).equals("null")) {somebody1.setWorkTitle("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getIncome()).equals("null")) {somebody1.setIncome("æœªçŸ¥");}
 		if(String.valueOf(somebody1.getCharacterType()).equals("null")) {somebody1.setCharacterType(0);}
-		if(String.valueOf(somebody1.getHobby()).equals("null")) {String[] hobby= {"Î´Öª"};somebody1.setHobby(hobby);}
-		if(String.valueOf(somebody1.getStrongPoint()).equals("null")) {String[] strongPoint= {"Î´Öª"};somebody1.setStrongPoint(strongPoint);}
-		if(String.valueOf(somebody1.getWeakPoint()).equals("null")) {String[] weakPoint= {"Î´Öª"};somebody1.setWeakPoint(weakPoint);}
+		if(String.valueOf(somebody1.getHobby()).equals("null")) {String[] hobby= {"æœªçŸ¥"};somebody1.setHobby(hobby);}
+		if(String.valueOf(somebody1.getStrongPoint()).equals("null")) {String[] strongPoint= {"æœªçŸ¥"};somebody1.setStrongPoint(strongPoint);}
+		if(String.valueOf(somebody1.getWeakPoint()).equals("null")) {String[] weakPoint= {"æœªçŸ¥"};somebody1.setWeakPoint(weakPoint);}
 		if(String.valueOf(somebody1.getPersonalWealth()).equals("null")) {somebody1.setPersonalWealth(5);}
 		if(String.valueOf(somebody1.getSocialClass()).equals("null")) {somebody1.setSocialClass(8);}
 		if(String.valueOf(somebody1.getEducationalStatus()).equals("null")) {somebody1.setEducationalStatus(6);}
 		if(String.valueOf(somebody1.getCohesion()).equals("null")) {somebody1.setCohesion(0);}
-		if(String.valueOf(somebody1.getRelationship()).equals("null")) {somebody1.setRelationship("Î´Öª");}
-		if(String.valueOf(somebody1.getRelatedPerson()).equals("null")) {String[][] relatedPerson= {{"Î´Öª"},{"Î´Öª"}};somebody1.setRelatedPerson(relatedPerson);}
+		if(String.valueOf(somebody1.getRelationship()).equals("null")) {somebody1.setRelationship("æœªçŸ¥");}
+		if(String.valueOf(somebody1.getRelatedPerson()).equals("null")) {String[][] relatedPerson= {{"æœªçŸ¥"},{"æœªçŸ¥"}};somebody1.setRelatedPerson(relatedPerson);}
 		return somebody1;		
 	}
 	public boolean update(Somebody person) {
-		//¸üĞÂpersonµÄÊı¾İ
+		//æ›´æ–°personçš„æ•°æ®
 		ContentValues values=new ContentValues();
 		values.put(COLUMNS[1], person.getName());
 		values.put(COLUMNS[2], person.getSex());
@@ -581,7 +581,7 @@ public class DBHelper {
 		values.put(COLUMNS[33], person.getRelationship());
 		String[] ids= {String.valueOf(person.getId())};
 		db.update(TABLE_NAME, values, "_somebodyid=?",ids );
-		//Log.i("¸üĞÂÈËÊı£º",String.valueOf(upn));
+		//Log.i("æ›´æ–°äººæ•°ï¼š",String.valueOf(upn));
 		String[][] relatedPerson=person.getRelatedPerson();
 		if(!(String.valueOf(person.getRelatedPerson()[0][0]).equals("null"))) {
 			updateRelatedPerson(person.getId(),relatedPerson);
@@ -593,20 +593,20 @@ public class DBHelper {
 		return true;
 	}
 	private void updateRelatedPerson(int id, String[][] relatedPerson) {
-		// ±£³ÖÃ»ÓĞ¸ü¸ÄµÄÖµ²»±ä£¬É¾³ıÆäËüÖµ£¬Ôö¼ÓĞÂÖµ
+		// ä¿æŒæ²¡æœ‰æ›´æ”¹çš„å€¼ä¸å˜ï¼Œåˆ é™¤å…¶å®ƒå€¼ï¼Œå¢åŠ æ–°å€¼
         
 		
 		//Log.i("lenth",String.valueOf(relatedPerson[0][0])+String.valueOf(relatedPerson[0][1])+String.valueOf(relatedPerson[2][1]));
 		//db.execSQL("insert into "+TABLE_NAME_RELATEDPERSON+" VALUES (NULL,?,?,?,NULL)",new String[]{relatedPerson[i][0],relatedPerson[i][1],somebody1_id});
        
-        //1¡¢Çå³ı¾ÉÓĞµÄ¼ÇÂ¼
+        //1ã€æ¸…é™¤æ—§æœ‰çš„è®°å½•
         String[] ids = new String[10];
         int k=0;
         
         for(int i=0;i<relatedPerson.length;i++) {
         	if(String.valueOf(relatedPerson[i][2]).equals("null")) {
         		//Log.i("i:",String.valueOf(i));
-        		break;}//Ã»ÓĞĞÕÃûÖµ¾ÍÌø³ö
+        		break;}//æ²¡æœ‰å§“åå€¼å°±è·³å‡º
         	
         	if(!relatedPerson[i][0].equals("0")) {
         		ids[k]=relatedPerson[i][0];
@@ -622,7 +622,7 @@ public class DBHelper {
        
        for(int j=0;j<cursor.getCount();j++) {
     	   String cTabId=String.valueOf(cursor.getInt(0));
-    	   //ÅĞ¶Ï±íÖĞ±íµÄidÖµÊÇ·ñids[k]ÖĞ´æÔÚ,²»´æÔÚÉ¾³ı¼ÇÂ¼
+    	   //åˆ¤æ–­è¡¨ä¸­è¡¨çš„idå€¼æ˜¯å¦ids[k]ä¸­å­˜åœ¨,ä¸å­˜åœ¨åˆ é™¤è®°å½•
     	   int index=-1;
     	   for(int n=0;n<k;n++) {
     		   if(cTabId.equals(ids[n])) {
@@ -631,19 +631,19 @@ public class DBHelper {
     		   }
     	   }
     	   if(index>=0) {return;}
-    	   else {//±íÖĞ_id²»ÔÚids[]ÖĞ
+    	   else {//è¡¨ä¸­_idä¸åœ¨ids[]ä¸­
     		  // Log.i("del id:",cTabId);
     	   db.execSQL("delete from "+TABLE_NAME_RELATEDPERSON+" where _id="+cTabId+";");   
     	   }
     	   cursor.moveToNext();
        } 
-       //2¡¢ºóÔö¼Ó¸Ä±äÁËµÄ¼ÇÂ¼
+       //2ã€åå¢åŠ æ”¹å˜äº†çš„è®°å½•
        
         for(int i=0;i<relatedPerson.length;i++) {
-        	if(String.valueOf(relatedPerson[i][2]).equals("null")) {break;}//Ã»ÓĞÖµ¾ÍÌø³ö
-        	                                                 //ÓÃÒ»¸ö×Ö·û´®Êı×é¼ÇÂ¼±íÖĞÃ»ÓĞ¸Ä±äµÄrelatedPerson¶ÔÓ¦µÄid
+        	if(String.valueOf(relatedPerson[i][2]).equals("null")) {break;}//æ²¡æœ‰å€¼å°±è·³å‡º
+        	                                                 //ç”¨ä¸€ä¸ªå­—ç¬¦ä¸²æ•°ç»„è®°å½•è¡¨ä¸­æ²¡æœ‰æ”¹å˜çš„relatedPersonå¯¹åº”çš„id
         	if(relatedPerson[i][0].equals("0")) {
-        		//Îª¡±0¡°±íÊ¾±íÖĞÎŞ¼ÇÂ¼£¬Ôö¼ÓĞÂ¼ÇÂ¼
+        		//ä¸ºâ€0â€œè¡¨ç¤ºè¡¨ä¸­æ— è®°å½•ï¼Œå¢åŠ æ–°è®°å½•
         		ContentValues value1s=new ContentValues();
         		value1s.put(COLUMNS1[1], relatedPerson[i][1]);
         		value1s.put(COLUMNS1[2], relatedPerson[i][2]);
@@ -652,7 +652,7 @@ public class DBHelper {
         		db.insert(TABLE_NAME_RELATEDPERSON, null, value1s);
         	}
         	else {
-        		//²»Îª¡±0¡°±íÊ¾±íÖĞÓĞÃ»¸Ä¶¯µÄ¼ÇÂ¼£¬²»½øĞĞ¶¯×÷
+        		//ä¸ä¸ºâ€0â€œè¡¨ç¤ºè¡¨ä¸­æœ‰æ²¡æ”¹åŠ¨çš„è®°å½•ï¼Œä¸è¿›è¡ŒåŠ¨ä½œ
         		
         		return;
         		
@@ -666,14 +666,14 @@ public class DBHelper {
 		//Log.i("ivalue", String.valueOf(n));
 	}
 	public int delSomebody(int personId, String personName) {
-		// É¾³ıÄ³ÈËµÄËùÓĞĞÅÏ¢£¬·ÖÁ½²½£ºÉ¾³ıÖ÷±íÊı¾İºÍÉ¾³ı·Ö±íÊı¾İ
+		// åˆ é™¤æŸäººçš„æ‰€æœ‰ä¿¡æ¯ï¼Œåˆ†ä¸¤æ­¥ï¼šåˆ é™¤ä¸»è¡¨æ•°æ®å’Œåˆ é™¤åˆ†è¡¨æ•°æ®
 		String[] ids= {String.valueOf(personId)};
 		db.delete(TABLE_NAME_RELATEDPERSON, "_somebodyid=?", ids);
 		return db.delete(TABLE_NAME, "_somebodyid=?", ids);
 		
 	}
 	
-	//ÌØÊâ¹Ø¼ü´Ê²éÑ¯
+	//ç‰¹æ®Šå…³é”®è¯æŸ¥è¯¢
 	private String[][] ssPersons;
 	
 	public String[][] searchSpecialPersons(String keyWords,String className){
@@ -683,8 +683,8 @@ public class DBHelper {
 		//Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","nativePlace"}, "nativePlace='"+keyWords+"'", null,null, null, null);
 	    
 		
-		if(className.equals("¼®¹á")) {
-			//²éÑ¯¼®¹áÎªkeyWordsµÄÈËÔ±
+		if(className.equals("ç±è´¯")) {
+			//æŸ¥è¯¢ç±è´¯ä¸ºkeyWordsçš„äººå‘˜
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","nativePlace"}, "nativePlace='"+keyWords+"'", null,null, null, null);
 			if(cursorS.getCount()>0) {
 				Log.i("count1:",String.valueOf(cursorS.getCount()));
@@ -705,8 +705,8 @@ public class DBHelper {
 			}
 			
 		}
-		else if(className.equals("Ö°Òµ")) {
-			//²éÑ¯Ö°ÒµÎªkeyWordsµÄÈËÔ±
+		else if(className.equals("èŒä¸š")) {
+			//æŸ¥è¯¢èŒä¸šä¸ºkeyWordsçš„äººå‘˜
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","occupation"}, "occupation='"+keyWords+"'", null,null, null, null);
 			if(cursorS.getCount()>0) {
 				cursorS.moveToFirst();
@@ -723,8 +723,8 @@ public class DBHelper {
 				return null;
 			}
 		}
-		else if(className.equals("µ¥Î»")) {
-			//²éÑ¯µ¥Î»ÎªkeyWordsµÄÈËÔ±
+		else if(className.equals("å•ä½")) {
+			//æŸ¥è¯¢å•ä½ä¸ºkeyWordsçš„äººå‘˜
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","workUnits"}, "workUnits='"+keyWords+"'", null,null, null, null);
 			if(cursorS.getCount()>0) {
 				cursorS.moveToFirst();
@@ -741,11 +741,11 @@ public class DBHelper {
 				return null;
 			}
 		}
-		else if(className.equals("ĞÔ¸ñ")) {
-			//²éÑ¯ĞÔ¸ñÎªkeyWordsµÄÈËÔ±
+		else if(className.equals("æ€§æ ¼")) {
+			//æŸ¥è¯¢æ€§æ ¼ä¸ºkeyWordsçš„äººå‘˜
 			
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","characterType"}, "characterType='"+keyWords+"'", null,null, null, null);
-			Log.i("ĞÔ¸ñ",String.valueOf(cursorS.getCount()));
+			Log.i("æ€§æ ¼",String.valueOf(cursorS.getCount()));
 			if(cursorS.getCount()>0) {
 				cursorS.moveToFirst();
 			ssPersons=new String[cursorS.getCount()][5];
@@ -761,8 +761,8 @@ public class DBHelper {
 				return null;
 			}
 		}
-		else if(className.equals("°®ºÃ")) {
-			//²éÑ¯°®ºÃÎªkeyWordsµÄÈËÔ±
+		else if(className.equals("çˆ±å¥½")) {
+			//æŸ¥è¯¢çˆ±å¥½ä¸ºkeyWordsçš„äººå‘˜
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","hobby"}, "hobby='"+keyWords+"'", null,null, null, null);
 			if(cursorS.getCount()>0) {
 				cursorS.moveToFirst();
@@ -779,8 +779,8 @@ public class DBHelper {
 				return null;
 			}
 		}
-		else if(className.equals("¹ØÏµ")) {
-			//²éÑ¯¹ØÏµÎªkeyWordsµÄÈËÔ±
+		else if(className.equals("å…³ç³»")) {
+			//æŸ¥è¯¢å…³ç³»ä¸ºkeyWordsçš„äººå‘˜
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","relationship"}, "relationship='"+keyWords+"'", null,null, null, null);
 			if(cursorS.getCount()>0) {
 				cursorS.moveToFirst();
@@ -797,8 +797,8 @@ public class DBHelper {
 				return null;
 			}
 		}
-		else if(className.equals("½ÌÓı³Ì¶È")) {
-			//²éÑ¯½ÌÓı³Ì¶ÈÎªkeyWordsµÄÈËÔ±
+		else if(className.equals("æ•™è‚²ç¨‹åº¦")) {
+			//æŸ¥è¯¢æ•™è‚²ç¨‹åº¦ä¸ºkeyWordsçš„äººå‘˜
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","educationStatus"}, "educationalStatus='"+keyWords+"'", null,null, null, null);
 			if(cursorS.getCount()>0) {
 				cursorS.moveToFirst();
@@ -815,8 +815,8 @@ public class DBHelper {
 				return null;
 			}
 		}
-		else if(className.equals("Ö°Îñ¼¶±ğ")) {
-			//²éÑ¯Ö°Îñ¼¶±ğÎªkeyWordsµÄÈËÔ±
+		else if(className.equals("èŒåŠ¡çº§åˆ«")) {
+			//æŸ¥è¯¢èŒåŠ¡çº§åˆ«ä¸ºkeyWordsçš„äººå‘˜
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","socialClass"},"socialClass='"+keyWords+"'", null,null, null, null);
 			if(cursorS.getCount()>0) {
 				cursorS.moveToFirst();
@@ -833,8 +833,8 @@ public class DBHelper {
 				return null;
 			}
 		}
-		else if(className.equals("¸öÈË²Æ¸»")) {
-			//²éÑ¯Ö°ÒµÎªkeyWordsµÄÈËÔ±
+		else if(className.equals("ä¸ªäººè´¢å¯Œ")) {
+			//æŸ¥è¯¢èŒä¸šä¸ºkeyWordsçš„äººå‘˜
 			Cursor cursorS=db.query(TABLE_NAME,new String[] {"_somebodyid","name","sex","personalWealth"}, "personalWealth='"+keyWords+"'", null,null, null, null);
 			if(cursorS.getCount()>0) {
 				cursorS.moveToFirst();
@@ -856,7 +856,7 @@ public class DBHelper {
 	}
 	
 	
-	/////±£´æÄ³¸öÈÎÎñµ½ÈÎÎñÀ¸Ä¿ÖĞ
+	/////ä¿å­˜æŸä¸ªä»»åŠ¡åˆ°ä»»åŠ¡æ ç›®ä¸­
 	    
 		public boolean saveTaskone(Task taskOne) {
 			final String CREATE_TASK="create table if not exists "+TABLE_NAME_TASK+" ("+COLUMNS2[0]+" integer primary key autoincrement,"+COLUMNS2[1]+" text,"+COLUMNS2[2]+" text,"+COLUMNS2[3]+" text,"+COLUMNS2[4]+" text,"+COLUMNS2[5]+" integer);";
@@ -877,7 +877,7 @@ public class DBHelper {
 		}
 		public String[][] findTasks() {			
 			String[][] tasks;
-			//Èç¹ûÃ»ÓĞÊı¾İ±í£¬Ôò´´½¨Ò»¸ö
+			//å¦‚æœæ²¡æœ‰æ•°æ®è¡¨ï¼Œåˆ™åˆ›å»ºä¸€ä¸ª
 			final String CREATE_TASK="create table if not exists "+TABLE_NAME_TASK+" ("+COLUMNS2[0]+" integer primary key autoincrement,"+COLUMNS2[1]+" text,"+COLUMNS2[2]+" text,"+COLUMNS2[3]+" text,"+COLUMNS2[4]+" text,"+COLUMNS2[5]+" integer);";
 			db.execSQL(CREATE_TASK);
 			
@@ -910,15 +910,15 @@ public class DBHelper {
 			
 		}
 		public void clearTasks() {
-			// Çå³ıÈÎÎñ±íÖĞËùÓĞµÄÈÎÎñÄÚÈİ¼°¸½±íÖĞÄÚÈİ
+			// æ¸…é™¤ä»»åŠ¡è¡¨ä¸­æ‰€æœ‰çš„ä»»åŠ¡å†…å®¹åŠé™„è¡¨ä¸­å†…å®¹
 			//db.execSQL("delete from "+TABLE_NAME_TASK); 
 			db.execSQL("drop table if exists "+TABLE_NAME_TASK);
 			db.execSQL("drop table if exists "+TABLE_NAME_TASKSTEP);
 			db.execSQL("drop table if exists "+TABLE_NAME_PERFORMER);
 		}
 		public void AdjustTaskStatus(int taskId, int taskStatusSet) {
-			// µ÷ÕûÈÎÎñ×´Ì¬,¿ªÆô»òÕß½áÊø,Ö÷ÒªĞŞ¸ÄÊı¾İ¿âÖĞtaskStatusÖµ
-			///½«µ±Ç°µÄÈÕÆÚÓëÈÎÎñ¼Æ»®Ê±¼ä±È½Ï
+			// è°ƒæ•´ä»»åŠ¡çŠ¶æ€,å¼€å¯æˆ–è€…ç»“æŸ,ä¸»è¦ä¿®æ”¹æ•°æ®åº“ä¸­taskStatuså€¼
+			///å°†å½“å‰çš„æ—¥æœŸä¸ä»»åŠ¡è®¡åˆ’æ—¶é—´æ¯”è¾ƒ
 			ContentValues values=new ContentValues();
 			values.put(COLUMNS2[5], taskStatusSet);
 			String[] taskids= {String.valueOf(taskId)};
@@ -926,7 +926,7 @@ public class DBHelper {
 			//Log.i("count:",String.valueOf(count));
 		}
 		public Task findTaskOne(int taskOneId) {
-			// ¸ù¾İÈÎÎñIdºÅÑ°ÕÒÈÎÎñËùÓĞÊıÖµ
+			// æ ¹æ®ä»»åŠ¡Idå·å¯»æ‰¾ä»»åŠ¡æ‰€æœ‰æ•°å€¼
 			Task taskOne=new Task();
 			Cursor cursor=db.query(TABLE_NAME_TASK,null, "_taskid="+taskOneId, null,null, null, "_taskid desc");
 			//if(cursor.getCount()>0) {Log.i("tag:","ok");}
@@ -949,13 +949,13 @@ public class DBHelper {
 			return taskOne;
 		}
 		private Performer findPerformer(int taskId, int stepId) {
-			// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-			//¸ù¾İtaskidºÍstepidÔÚ±íperformerÖĞ²éÕÒperformerid,performertask
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+			//æ ¹æ®taskidå’Œstepidåœ¨è¡¨performerä¸­æŸ¥æ‰¾performerid,performertask
 			   Performer performer=new Performer();
 			   final String CREATE_TASK_PERFORMER="create table if not exists "+TABLE_NAME_PERFORMER+" ("+COLUMNS4[0]+" integer primary key autoincrement,"+COLUMNS4[1]+" integer,"+COLUMNS4[2]+" integer,"+COLUMNS4[3]+" integer,"+COLUMNS4[4]+" text);";
 			   db.execSQL(CREATE_TASK_PERFORMER);
 			   Cursor cursor2=db.query(TABLE_NAME_PERFORMER,null, "_taskid="+taskId+" and _stepid="+stepId, null,null, null, null);
-			   if(cursor2.getCount()>0) {//Èç¹ûperformer±íÖĞÓĞÊı¾İ£¬Ôò»ñÈ¡Êı¾İ
+			   if(cursor2.getCount()>0) {//å¦‚æœperformerè¡¨ä¸­æœ‰æ•°æ®ï¼Œåˆ™è·å–æ•°æ®
 				 cursor2.moveToFirst();
 				 for(int i=0;i<cursor2.getCount();i++) {
 					 performer.performerId[i]=cursor2.getInt(3);
@@ -970,7 +970,7 @@ public class DBHelper {
 				
 		}
 		public TaskStep[] findTaskStep(int taskOneId){
-			//´ËÊ±²úÉú²½ÖèµÄÊı¾İÁË£¬Èç¹ûÃ»ÓĞ²½ÖèµÄ±í£¬Ôò×Ô¶¯½¨Á¢£¬Èç¹û´æÔÚÔò½øĞĞ¸³Öµ
+			//æ­¤æ—¶äº§ç”Ÿæ­¥éª¤çš„æ•°æ®äº†ï¼Œå¦‚æœæ²¡æœ‰æ­¥éª¤çš„è¡¨ï¼Œåˆ™è‡ªåŠ¨å»ºç«‹ï¼Œå¦‚æœå­˜åœ¨åˆ™è¿›è¡Œèµ‹å€¼
 			
 			   final String CREATE_TASKSTEP="create table if not exists "+TABLE_NAME_TASKSTEP+" ("+COLUMNS3[0]+" integer primary key autoincrement,"+COLUMNS3[1]+" integer,"+COLUMNS3[2]+" text,"+COLUMNS3[3]+" text,"+COLUMNS3[4]+" boolean,"+COLUMNS3[5]+" integer);";
 			   db.execSQL(CREATE_TASKSTEP);
@@ -978,7 +978,7 @@ public class DBHelper {
 			   //Log.i("count:",String.valueOf(cursor1.getCount()));
 			   tss=new TaskStep [cursor1.getCount()];
 			   if(cursor1.getCount()>0) {
-				   //ÒÑ¾­×öÁË·Ö²½
+				   //å·²ç»åšäº†åˆ†æ­¥
 				   cursor1.moveToFirst();
 				   for(int i=0;i<cursor1.getCount();i++) {
 					   tss[i]=new TaskStep();
@@ -1002,7 +1002,7 @@ public class DBHelper {
 				   
 			   }
 			   else {
-				   //Ã»ÓĞ·Ö²½£¬ÔòÌáÊ¾·Ö²½
+				   //æ²¡æœ‰åˆ†æ­¥ï¼Œåˆ™æç¤ºåˆ†æ­¥
 				   tss=null;
 			   }
 			   
@@ -1010,7 +1010,7 @@ public class DBHelper {
 			
 		}
 		public boolean insertTaskStep(TaskStep step) {
-			// ²åÈëÈÎÎñ²½Öè
+			// æ’å…¥ä»»åŠ¡æ­¥éª¤
 			
 			
 			final String CREATE_TASKSTEP="create table if not exists "+TABLE_NAME_TASKSTEP+" ("+COLUMNS3[0]+" integer primary key autoincrement,"+COLUMNS3[1]+" integer,"+COLUMNS3[2]+" text,"+COLUMNS3[3]+" text,"+COLUMNS3[4]+" boolean,"+COLUMNS3[5]+" integer);";
@@ -1043,12 +1043,12 @@ public class DBHelper {
 			}
 		}
 		public TaskStep findOneStep(int stepid) {
-			// Í¨¹ıstepidĞÅÏ¢²éÕÒ¸ÃstepËùÓĞĞÅÏ¢
+			// é€šè¿‡stepidä¿¡æ¯æŸ¥æ‰¾è¯¥stepæ‰€æœ‰ä¿¡æ¯
 			TaskStep stepOne=new TaskStep();
 			final String CREATE_TASKSTEP="create table if not exists "+TABLE_NAME_TASKSTEP+" ("+COLUMNS3[0]+" integer primary key autoincrement,"+COLUMNS3[1]+" integer,"+COLUMNS3[2]+" text,"+COLUMNS3[3]+" text,"+COLUMNS3[4]+" boolean,"+COLUMNS3[5]+" integer);";
 			db.execSQL(CREATE_TASKSTEP);
 			Cursor cursor=db.query(TABLE_NAME_TASKSTEP,null, "_stepid="+stepid, null,null, null, null);
-			if(cursor.getCount()==1){//Èç¹ûÄÜ¹»ÕÒµ½1Ìõ,½«»ñµÃµÄÊıÖµ¸³Óè
+			if(cursor.getCount()==1){//å¦‚æœèƒ½å¤Ÿæ‰¾åˆ°1æ¡,å°†è·å¾—çš„æ•°å€¼èµ‹äºˆ
 				cursor.moveToFirst();
 				stepOne.setStepId(cursor.getInt(0));
 				stepOne.setWhichStep(cursor.getInt(1));
@@ -1069,7 +1069,7 @@ public class DBHelper {
 		}
 		
 		public void updateStepContent(int stepid, String stepContent) {
-			// ¸üĞÂContentÊı¾İ
+			// æ›´æ–°Contentæ•°æ®
 			ContentValues values=new ContentValues();
 			values.put(COLUMNS3[2], stepContent);
 			String[] stepids= {String.valueOf(stepid)};
@@ -1077,10 +1077,10 @@ public class DBHelper {
 			
 		}
 		public void adjustStepsValue(int taskId) {
-			// °´ÕÕ´óĞ¡µ÷ÕûwhichStepsÖµ
+			// æŒ‰ç…§å¤§å°è°ƒæ•´whichStepså€¼
 			
 			TaskStep[] steps=findTaskStep(taskId);
-			//ÒòÎªÊÇ¸ù¾İwhichStepÄæĞò²éÑ¯£¬µÚÒ»¸ö¼´×î´óÒ»¸ö
+			//å› ä¸ºæ˜¯æ ¹æ®whichStepé€†åºæŸ¥è¯¢ï¼Œç¬¬ä¸€ä¸ªå³æœ€å¤§ä¸€ä¸ª
 			for(int i=0;i<steps.length;i++) {
 				if(steps[i].getWhichStep()!=steps.length-i) {
 				steps[i].setWhichStep(steps.length-i);
@@ -1096,7 +1096,7 @@ public class DBHelper {
 			
 		}
 		public void editStepTime(int stepid, String time1) {
-			// ½«²½ÖèĞŞ¸ÄºóµÄÊ±¼äÔÚÊı¾İ¿âÖĞ¸üĞÂ
+			// å°†æ­¥éª¤ä¿®æ”¹åçš„æ—¶é—´åœ¨æ•°æ®åº“ä¸­æ›´æ–°
 			ContentValues values=new ContentValues();
 			values.put(COLUMNS3[3], time1);
 			String[] stepids= {String.valueOf(stepid)};
@@ -1104,7 +1104,7 @@ public class DBHelper {
 			
 		}
 		public void editStepStatus(int stepid) {
-			// ĞŞ¸ÄstepÖĞisCompletedÖµ
+			// ä¿®æ”¹stepä¸­isCompletedå€¼
 			ContentValues values=new ContentValues();
 			values.put(COLUMNS3[4],"true");
 			String[] stepids= {String.valueOf(stepid)};
