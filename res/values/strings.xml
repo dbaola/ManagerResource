@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+
+    <string name="app_name">资源管理</string>
+    <string name="app_name_newRelatives">新建人员信息</string>
+    <string name="action_settings">设置</string>
+    
+    <!-- 设置somebody相关string名称 -->
+    <string name="somebody_details">基本资料</string>
+    <string name="somebody_name">姓名</string>
+    <string name="somebody_sex">性别</string>
+    <string name="somebody_birthday">出生日期</string>
+    <string name="somebody_nativePlace">籍贯</string>
+        
+    <string name="somebody_connType">【联系方式】</string>
+    <string name="somebody_nickname">昵称</string>
+    <string name="somebody_telephone">电话</string>
+    <string name="somebody_email">邮件</string>
+    <string name="somebody_qq">QQ</string>
+    <string name="somebody_weibo">微博</string>
+    <string name="somebody_boke">博客</string>
+    <string name="somebody_wechat">微信</string>
+    <string name="somebody_address">地址</string>
+    <string name="somebody_address_hint">常用通信地址</string>
+    
+    <string name="somebody_selfCondition">【个人情况】</string>
+    <string name="somebody_needs">个人需求</string>
+    <string name="somebody_height">身高</string>
+    <string name="somebody_weight">体重</string>
+    <string name="somebody_bloodType">血型</string>
+    <string name="somebody_nationality">民族</string>
+    <string name="somebody_party">政治面貌</string>
+    <string name="somebody_married">婚姻状况</string>
+    <string name="somebody_healthCondition">健康状况</string>
+    <string name="somebody_occupation">职业</string>
+    <string name="somebody_workUnits">工作单位</string>
+    <string name="somebody_workTitle">职位</string>
+    <string name="somebody_income">收入状况</string>
+    <string name="somebody_characterType">性格类型</string>
+    <string name="somebody_characterType_hint">按九型人格分类</string>
+    <string name="somebody_hobby">爱好</string>
+    <string name="somebody_strongPoint">强项</string>
+    <string name="somebody_weakPoint">弱项</string>
+    
+    <string name="somebody_resource">【资源状况】</string>
+    <string name="somebody_personalWealth">个人财富</string>
+    <string name="somebody_socialClass">官位等级</string>
+    <string name="somebody_educationalStatus">教育程度</string>
+    <string name="somebody_cohesion">亲密度</string>
+    <string name="somebody_relationship">与我关系</string>
+    
+    <string name="somebody_relatedPerson">【+他|她的关系资源】</string>
+    <string name="somebody_relatedPersonType">关系类型</string>
+    <string name="somebody_relatedPersonName">人名</string>
+    
+    <string name="somebody_sex0">男</string>
+    <string name="somebody_sex1">女</string>
+    <string name="yeye">是</string>
+    <string name="nono">否</string>
+    <string name="good">好</string>
+    <string name="bad">差</string>
+    
+    
+    <!-- 设置其它信息 -->
+    <string name="xinjian">新建人员</string>
+    <string name="app_cancel">退出</string>
+    <string name="add">添加</string>
+    <string name="classify">分类</string>
+    <string name="search_content">请输入搜索内容</string>
+    <string name="updown">↑↓</string>
+    <string name="officialPosition">官位</string>
+    <string name="personalWealth">财富</string>
+    <string name="knowledge">知识</string>
+    <string name="loginame">用户：</string>
+    <string name="pass">密码：</string>
+    <string name="btok">确定</string>
+    <string name="btcancel">取消</string>
+    <string name="phoneGet">导入</string>
+    <string name="defaultc">默认</string>
+    <string name="edit">编辑</string>
+    <string name="del">删除</string>
+    <string name="exit">退出</string>
+    <string name="task">任务</string>
+    <string name="taskManager">任务管理</string>
+    <string name="taskName">任务名称</string>
+    <string name="taskGoal">目标动机</string>
+    <string name="beginTime">开启时间</string>
+    <string name="endTime">完成时限</string>
+    <string name="clear">清除</string>
+    <string name="stepContent">步骤内容</string>
+    <string name="addPerformerC">+参与者</string>
+    <string name="addOne">+ 添加</string>
+    <string name="performerName">参与者姓名</string>
+    
+
+    
+
+</resources>
