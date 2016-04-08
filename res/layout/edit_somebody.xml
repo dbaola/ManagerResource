@@ -1,0 +1,734 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:paddingBottom="20dp"
+        android:id="@+id/sv1"> 
+
+  <TableLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:id="@+id/tableL1"
+ 
+        > 
+        <TableRow 
+            android:gravity="center">
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_name"
+            android:inputType="text"
+            android:textSize="@dimen/title" /> 
+        </TableRow> 
+        
+        <TableRow 
+            android:layout_width="match_parent"
+            android:gravity="left">        
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_sex"
+            android:textSize="@dimen/content" />
+         <RadioGroup 
+             android:id="@+id/sex"
+             android:orientation="horizontal"
+             android:layout_width="170dp"
+             android:layout_height="wrap_content"
+             android:gravity="left">
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/sex0"
+                 android:text="@string/somebody_sex0"
+                 android:checked="true"
+                 android:textSize="@dimen/content"
+                 />
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/sex1"
+                 android:text="@string/somebody_sex1"
+                 android:textSize="@dimen/content"
+                 />             
+         </RadioGroup>
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_birthday"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_birthday"
+            android:inputType="date"
+            android:textSize="@dimen/content" />            
+        </TableRow>        
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_nativePlace"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/nativePlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_nativePlace"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+
+        <!-- 联系方式 -->
+        <TableRow 
+            
+            android:layout_width="match_parent">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/somebody_connType"
+            android:textSize="@dimen/content"
+            android:textColor="#999"/>     
+            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_nickname"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/nickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_nickname"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow>
+            
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_telephone"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/telephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_telephone"
+            android:inputType="phone"
+            android:textSize="@dimen/content" /> 
+                       
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_email"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_email"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_qq"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/qq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_qq"
+            android:inputType="number"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_weibo"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/weibo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_weibo"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_boke"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/boke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_boke"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_wechat"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/wechat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_wechat"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_address"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_address_hint"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>    
+               <!-- 个人情况 -->
+           <TableRow 
+            
+            android:layout_width="match_parent">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/somebody_selfCondition"
+            android:textSize="@dimen/content"
+            android:textColor="#999"/>     
+            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_needs"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/needs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_needs"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_height"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_height"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_weight"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_weight"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/content" />            
+        </TableRow>    
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_bloodType"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/bloodType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_bloodType"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_nationality"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/nationality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_nationality"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_party"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/party"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_party"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_married"
+            android:textSize="@dimen/content" />
+            <RadioGroup 
+             android:id="@+id/married"
+             android:orientation="horizontal"
+            
+             android:layout_height="wrap_content"
+             android:gravity="left">
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/married_yeye"
+                 android:text="@string/yeye"
+                 android:checked="true"
+                 android:textSize="@dimen/content"
+                 />
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/married_nono"
+                 android:text="@string/nono"
+                 android:textSize="@dimen/content"
+                 />             
+         </RadioGroup>                 
+        </TableRow>
+                <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_healthCondition"
+            android:textSize="@dimen/content" />
+            <RadioGroup 
+             android:id="@+id/healthCondition"
+             android:orientation="horizontal"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="left"
+             >
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/wealth_good"
+                 android:text="@string/good"
+                 android:checked="true"
+                 android:textSize="@dimen/content"
+                 />
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/wealth_bad"
+                 android:text="@string/bad"
+                 android:textSize="@dimen/content"
+                 />             
+         </RadioGroup>                 
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_occupation"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_occupation"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_workUnits"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/workUnits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_workUnits"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_workTitle"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/workTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_workTitle"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_income"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/income"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_income"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_characterType"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/characterType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_characterType_hint"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_hobby"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/hobby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_hobby"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_strongPoint"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/strongPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_strongPoint"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_weakPoint"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/weakPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_weakPoint"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+                <!-- 资源状况 -->
+         <TableRow 
+            
+            android:layout_width="match_parent">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/somebody_resource"
+            android:textSize="@dimen/content"
+            android:textColor="#999"/>     
+            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_personalWealth"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/personalWealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_personalWealth"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_socialClass"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/socialClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_socialClass"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_educationalStatus"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/educationalStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_educationalStatus"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_cohesion"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/cohesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_cohesion"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_relationship"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/relationship"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_relationship"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <!-- 他|她的关系 -->
+        <TableRow 
+            
+            android:layout_width="match_parent">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/somebody_relatedPerson"
+            android:textSize="@dimen/content"
+            android:textColor="#999"
+            android:id="@+id/button_relatedPerson_id"/>     
+            
+        </TableRow>
+        <!-- 
+        <TableRow >
+            <EditText
+            android:id="@+id/relatedPersonType"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_relatedPersonType"
+            android:inputType="text"
+            android:textSize="@dimen/content" />
+            <EditText
+            android:id="@+id/relatedPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/somebody_relatedPersonName"
+            android:inputType="text"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+         -->
+        
+     </TableLayout>
+     </ScrollView></LinearLayout>
+     
+ 

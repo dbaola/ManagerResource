@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:id="@+id/lineLayout_disp">
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:paddingBottom="20dp"
+        android:id="@+id/sv1"> 
+
+  <TableLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:id="@+id/tableL1"
+        > 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_birthday"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>        
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_nativePlace"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/nativePlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"            
+            android:textSize="@dimen/content" />            
+        </TableRow>
+
+        <!-- 联系方式 -->
+        <TableRow 
+            
+            android:layout_width="match_parent">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/somebody_connType"
+            android:textSize="@dimen/content"
+            android:textColor="#999"/>     
+            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_nickname"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/nickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow>
+            
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_telephone"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/telephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" /> 
+                       
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_email"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_qq"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/qq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_weibo"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/weibo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_boke"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/boke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_wechat"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/wechat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_address"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>    
+               <!-- 个人情况 -->
+           <TableRow 
+            
+            android:layout_width="match_parent">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/somebody_selfCondition"
+            android:textSize="@dimen/content"
+            android:textColor="#999"/>     
+            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_needs"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/needs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_height"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_weight"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>    
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_bloodType"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/bloodType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_nationality"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/nationality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_party"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/party"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_married"
+            android:textSize="@dimen/content" />
+            <RadioGroup 
+             android:id="@+id/married"
+             android:orientation="horizontal"
+            
+             android:layout_height="wrap_content"
+             android:gravity="left">
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/married_yeye"
+                 android:text="@string/yeye"
+                 android:checked="true"
+                 android:textSize="@dimen/content"
+                 />
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/married_nono"
+                 android:text="@string/nono"
+                 android:textSize="@dimen/content"
+                 />             
+         </RadioGroup>                 
+        </TableRow>
+                <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_healthCondition"
+            android:textSize="@dimen/content" />
+            <RadioGroup 
+             android:id="@+id/healthCondition"
+             android:orientation="horizontal"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="left"
+             >
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/wealth_good"
+                 android:text="@string/good"
+                 android:checked="true"
+                 android:textSize="@dimen/content"
+                 />
+             <RadioButton 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/wealth_bad"
+                 android:text="@string/bad"
+                 android:textSize="@dimen/content"
+                 />             
+         </RadioGroup>                 
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_occupation"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_workUnits"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/workUnits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_workTitle"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/workTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow> 
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_income"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/income"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_characterType"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/characterType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_hobby"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/hobby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_strongPoint"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/strongPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_weakPoint"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/weakPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>  
+                <!-- 资源状况 -->
+         <TableRow 
+            
+            android:layout_width="match_parent">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/somebody_resource"
+            android:textSize="@dimen/content"
+            android:textColor="#999"/>     
+            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_personalWealth"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/personalWealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_socialClass"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/socialClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_educationalStatus"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/educationalStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_cohesion"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/cohesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <TableRow >
+            <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:text="@string/somebody_relationship"
+            android:textSize="@dimen/content" />
+            <TextView
+            android:id="@+id/relationship"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/content" />            
+        </TableRow>
+        <!-- 他|她的关系 -->
+        <TableRow 
+            
+            android:layout_width="match_parent">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/somebody_relatedPerson"
+            android:textSize="@dimen/content"
+            android:textColor="#999"
+            android:id="@+id/button_relatedPerson_id"/>     
+            
+        </TableRow>
+       
+        
+     </TableLayout>
+     </ScrollView>
+      <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        />
+    </LinearLayout>
+    
+
+</LinearLayout>
